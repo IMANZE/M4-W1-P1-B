@@ -1,23 +1,22 @@
 /* 1. Given a string (as a parameter), return the character that is most commonly used.*/
 
 function maxChar(str) {
-    let maxLength = 0
-    let maxChar = ""
-  
-    let strArr = str.split("")
-  
-    for (let i = 0; i < strArr.length; i++) {
-      let currChar = strArr[i]
-      let currLength = str.split(currChar).length
-  
-      if (currLength > maxLength) {
-        maxLength = currLength
-        maxChar = currChar
-      }
-    }
-    return maxChar
-  }
+  let maxLength = 0;
+  let maxChar = "";
 
+  let strArr = str.split("");
+
+  for (let i = 0; i < strArr.length; i++) {
+    let currChar = strArr[i];
+    let currLength = str.split(currChar).length;
+
+    if (currLength > maxLength) {
+      maxLength = currLength;
+      maxChar = currChar;
+    }
+  }
+  return maxChar;
+}
 
 /* 2) ANAGRAMS
 
@@ -33,7 +32,31 @@ or punctuation.  Consider capital letters to be the same as lower case
 */
 
 function isAnagram(str1, str2) {
-  return str1.split("").sort().join() === str2.split("").sort().join()
+  return str1.split("").sort().join() === str2.split("").sort().join();
 }
 
 // console.log(isAnagram("RAIL! SAFETY!", "fairy tales"))
+
+/* 3) ANAGRAMS 2
+
+Given a word and a list of possible anagrams, select the correct sublist.
+
+--- Examples 
+
+    "listen" and a list of candidates like "enlists" "google" "inlets" "banana" the program should return a list containing "inlets".
+*/
+
+function getAnagramFromList(str, arr) {
+  const anagramsFound = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    const word = arr[i];
+    if (isAnagram(str, word)) {
+      anagramsFound.push(word);
+    }
+  }
+
+  return anagramsFound;
+}
+
+// console.log(getAnagramFromList("listen", ["inlets", "google", "enlist", "banana"]))
