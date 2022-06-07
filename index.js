@@ -82,3 +82,27 @@ function isPalindrome(str) {
 }
 
 // console.log(isPalindrome(" ,abba, "));
+
+/* 5) REVERSE INT
+
+Given an integer, return an integer that is the reverse
+ordering of numbers.
+
+--- Examples
+
+    reverseInt(15) === 51
+    reverseInt(981) === 189
+    reverseInt(500) === 5
+    reverseInt(-15) === -51
+    reverseInt(-90) === -9
+ */
+
+    let reverseInt = n => {
+      let str = n.toString()
+      if (str.charAt(0) === "-") {
+        return parseFloat("-" + str.substr(1, str.length).split("").reverse().join(""))
+      }
+      return parseFloat(str.split("").reverse().join(""))
+    }
+    
+    console.log(reverseInt(-501))
