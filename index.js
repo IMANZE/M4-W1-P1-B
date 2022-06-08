@@ -106,3 +106,47 @@ ordering of numbers.
     }
     
     console.log(reverseInt(-501))
+
+ /* 6) STEPS
+
+Write a function that accepts a positive number N.
+The function should console log a step shape
+with N levels using the # character.  Make sure the
+step has spaces on the right hand side!
+
+--- Examples
+
+    steps(2)
+        '# '
+        '##'
+    steps(3)
+        '#  '
+        '## '
+        '###'
+    steps(4)
+        '#   '
+        '##  '
+        '### '
+        '####' */
+
+function drawSteps(n) {
+  let char = "#"
+  let space = " "
+  for (let i = 1; i < n + 1; i++) {
+    console.log(char.repeat(i) + space.repeat(n - i))
+  }
+}
+
+// drawSteps(5);
+
+// function drawStepsAlt(n) {
+//   for (let i = 0; i < n; i++) {
+//     let step = "";
+
+//     for (let j = 0; j < i + 1; j++) {
+//         step += "#";
+//     }
+//     return step;
+//   }
+// };
+// drawStepsAlt(8);
