@@ -97,17 +97,19 @@ ordering of numbers.
     reverseInt(-90) === -9
  */
 
-    let reverseInt = n => {
-      let str = n.toString()
-      if (str.charAt(0) === "-") {
-        return parseFloat("-" + str.substr(1, str.length).split("").reverse().join(""))
-      }
-      return parseFloat(str.split("").reverse().join(""))
-    }
-    
-    console.log(reverseInt(-501))
+let reverseInt = (n) => {
+  let str = n.toString();
+  if (str.charAt(0) === "-") {
+    return parseFloat(
+      "-" + str.substr(1, str.length).split("").reverse().join("")
+    );
+  }
+  return parseFloat(str.split("").reverse().join(""));
+};
 
- /* 6) STEPS
+console.log(reverseInt(-501));
+
+/* 6) STEPS
 
 Write a function that accepts a positive number N.
 The function should console log a step shape
@@ -130,10 +132,10 @@ step has spaces on the right hand side!
         '####' */
 
 function drawSteps(n) {
-  let char = "#"
-  let space = " "
+  let char = "#";
+  let space = " ";
   for (let i = 1; i < n + 1; i++) {
-    console.log(char.repeat(i) + space.repeat(n - i))
+    console.log(char.repeat(i) + space.repeat(n - i));
   }
 }
 
@@ -150,3 +152,21 @@ function drawSteps(n) {
 //   }
 // };
 // drawStepsAlt(8);
+
+/* 7) REVERSE STRING
+
+Given a string, return a new string with the reversed
+order of characters
+
+--- Examples
+
+    reverse('apple') === 'elppa'
+    reverse('hello') === 'olleh'
+    reverse('Greetings!') === '!sgniteerG'
+ */
+
+function reverse(str) {
+  return str.split("").reverse().join("");
+}
+
+console.log(reverse("Greetings!"));
