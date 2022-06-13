@@ -195,3 +195,34 @@ function chunkify(arr, chunkSize) {
 }
 
 console.log(chunkify([1, 2, 3, 4, 5, 6, 7, 8], 3));
+
+/* 9) PYRAMID
+
+Write a function that accepts a positive number N.
+The function should console log a pyramid shape
+with N levels using the # character.  Make sure the
+pyramid has spaces on both the left and right hand sides
+
+--- Examples
+
+    pyramid(1)
+        '#'
+    pyramid(2)
+        ' # '
+        '###'
+    pyramid(3)
+        '  #  '
+        ' ### '
+        '#####' */
+
+        function pyramid(n) {
+          let space = " "
+          let char = "#"
+          for (let i = 0; i < n + 1; i++) {
+            for (let j = 1; j < i + 1; j++) {
+              console.log(space.repeat(n - j) + char.repeat(j * 2 - 1) + space.repeat(n - j), "|")
+            }
+            console.log("step", i + 1)
+          }
+        }
+        pyramid(6)
